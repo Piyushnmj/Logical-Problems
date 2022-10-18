@@ -1,28 +1,24 @@
 ﻿class FinonacciSeries
 {
-    public static int Fibonacci(int num)
-    {
-        int a = 0;
-        int b = 1;
-
-        for (int i = 0; i < num; i++)
-        {
-            int temp = a;
-            a = b;
-            b = temp + b;
-        }
-        return a;
-    }
-
     static void Main(string[] args)
     {
-        Console.WriteLine("Enter N terms for Fibonacci Series: ");
+        Console.WriteLine("Enter N terms for the Fibonaccis Series: ");
         int N = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("The Fibonacci Series of {0} terms are:", N);
 
-        for (int i = 0; i < N; i++)
+        int a = 0;
+        int b = 1;
+        int c;
+
+        Console.WriteLine("The Fibonacci Series for {0} terms are: ", N);
+        Console.WriteLine(a);
+        Console.WriteLine(b);
+
+        for (int i = 0; i < (N - 2); i++)
         {
-            Console.WriteLine("{0}" , Fibonacci(i));
+            c = a + b;
+            Console.WriteLine(c);
+            a = b;
+            b = c;
         }
         Console.ReadLine();
     }
