@@ -1,25 +1,19 @@
-﻿class FinonacciSeries
+﻿class ReverseNumber
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Enter N terms for the Fibonaccis Series: ");
-        int N = Convert.ToInt32(Console.ReadLine());
-
-        int a = 0;
-        int b = 1;
-        int c;
-
-        Console.WriteLine("The Fibonacci Series for {0} terms are: ", N);
-        Console.WriteLine(a);
-        Console.WriteLine(b);
-
-        for (int i = 0; i < (N - 2); i++)
+        Console.WriteLine("Enter a number to reverse: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        int result = 0;
+        int remainder;
+        
+        while ( n != 0 )
         {
-            c = a + b;
-            Console.WriteLine(c);
-            a = b;
-            b = c;
+            remainder = n % 10;
+            result = (result * 10) + remainder;
+            n = n / 10;  //quotient
         }
+        Console.WriteLine("The reverse is: " + result);
         Console.ReadLine();
     }
 }
