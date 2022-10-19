@@ -1,28 +1,26 @@
-﻿class PerfectNumber
+﻿class PrimeNumber
 {
     static void Main(string[] args)
     {
-        int sum = 0;
-        Console.WriteLine("Enter a number: ");
+        int count = 0;
+        Console.WriteLine("Enter a value: ");
         int num = Convert.ToInt32(Console.ReadLine());
-        int n = num;
 
-        for (int i = 1; i < num; i++)
+        for (int i = 1; i <= num; i++)
         {
             if (num % i == 0)
             {
-                sum = sum + i;
+                count++;
             }
         }
-
-        if (sum == n)
+        if (count == 2)
         {
-            Console.WriteLine("{0} is a Perfect Number", num);
+            Console.WriteLine("Prime Number");
             Console.ReadLine();
         }
         else
         {
-            Console.WriteLine("{0} is not a Perfect Number", num);
+            Console.WriteLine("Not Prime Number");
             Console.ReadLine();
         }
     }
