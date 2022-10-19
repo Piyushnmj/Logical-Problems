@@ -1,19 +1,30 @@
-﻿class ReverseNumber
+﻿class PerfectNumber
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Enter a number to reverse: ");
-        int n = Convert.ToInt32(Console.ReadLine());
-        int result = 0;
-        int remainder;
-        
-        while ( n != 0 )
+        int sum = 0;
+        Console.WriteLine("Enter a number: ");
+        int num = Convert.ToInt32(Console.ReadLine());
+        int n = num;
+
+        for (int i = 1; i < num; i++)
         {
-            remainder = n % 10;
-            result = (result * 10) + remainder;
-            n = n / 10;  //quotient
+            if (num % i == 0)
+            {
+                sum = sum + i;
+            }
         }
-        Console.WriteLine("The reverse is: " + result);
-        Console.ReadLine();
+
+        if (sum == n)
+        {
+            Console.WriteLine("{0} is a Perfect Number", num);
+            Console.ReadLine();
+        }
+        else
+        {
+            Console.WriteLine("{0} is not a Perfect Number", num);
+            Console.ReadLine();
+        }
     }
+        
 }
