@@ -1,28 +1,22 @@
-﻿class PrimeNumber
+﻿using System;
+using System.Diagnostics;
+using System.Threading;
+class StopwatchProgram
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        int count = 0;
-        Console.WriteLine("Enter a value: ");
-        int num = Convert.ToInt32(Console.ReadLine());
+        Stopwatch stopwatch = new Stopwatch();
+        Console.WriteLine("Start");
+        stopwatch.Start();
 
-        for (int i = 1; i <= num; i++)
+        for (int i = 0; i < 1000; i++)
         {
-            if (num % i == 0)
-            {
-                count++;
-            }
+            Thread.Sleep(20);
         }
-        if (count == 2)
-        {
-            Console.WriteLine("Prime Number");
-            Console.ReadLine();
-        }
-        else
-        {
-            Console.WriteLine("Not Prime Number");
-            Console.ReadLine();
-        }
+
+        Console.WriteLine("Stop");
+        stopwatch.Stop();
+
+        Console.WriteLine("Time Elapsed: {0:hh\\:mm\\:ss}", stopwatch.Elapsed);
     }
-        
 }
